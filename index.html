@@ -248,6 +248,7 @@ html,body{font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;ba
     <select id="f-cl">
       <option value="Mercado Livre">Mercado Livre</option>
       <option value="Superbet">Superbet</option>
+      <option value="GUT">GUT</option>
     </select>
     <label>Complexidade</label>
     <select id="f-cx">
@@ -256,7 +257,7 @@ html,body{font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;ba
       <option value="baixa">Baixa</option>
     </select>
     <label>Responsável(eis) — segure Ctrl/Cmd para múltiplos</label>
-    <select id="f-members" multiple=""><option value="bruno">Bruno Facundes</option><option value="sabrina">Sabrina Santos</option><option value="john">John Oliveira</option><option value="guilherme">Guilherme Dionísio</option><option value="michelle">Michelle Bastos</option><option value="tuanny">Tuanny Tawara</option></select>
+    <select id="f-members" multiple=""><option value="bruno">Bruno Facundes</option><option value="nathalia">Nathalia Campero</option><option value="beatriz">Beatriz Jannini</option></select>
     <label>Início <span style="font-size:10px;color:var(--text3);font-weight:400">— o job arranca automaticamente neste dia</span></label>
     <input type="date" id="f-startDate">
     <label>Deadline</label>
@@ -293,14 +294,16 @@ html,body{font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;ba
 
 <script>
 const MEMBERS=[
-  {id:'nathalia', name:'Nathalia Campero',  role:'Gerente de Estratégia',    ini:'NC',bg:'#EFEDE6',tc:'#5C5955',slackId:''},
-  {id:'beatriz',  name:'Beatriz Jannini',   role:'Supervisora de Estratégia',ini:'BJ',bg:'#EFEDE6',tc:'#5C5955',slackId:''},
+  {id:'bruno',    name:'Bruno Facundes',    role:'Diretor de Estratégia',     ini:'BF',bg:'#EFEDE6',tc:'#5C5955',slackId:''},
+  {id:'nathalia', name:'Nathalia Campero',  role:'Gerente de Estratégia',     ini:'NC',bg:'#EFEDE6',tc:'#5C5955',slackId:''},
+  {id:'beatriz',  name:'Beatriz Jannini',   role:'Supervisora de Estratégia', ini:'BJ',bg:'#EFEDE6',tc:'#5C5955',slackId:''},
 ];
 const SLACK_CHANNEL='C0AA0C2C51P';
 const CX={alta:'#E24B4A',media:'#EF9F27',baixa:'#1D9E75'};
 const CR={
   'Mercado Livre':{s:['#FFFBE6','#FFE066','#FFD000','#C9A000','#7A6000'],t:['#7A6000','#7A6000','#1A1500','#FFFBE6','#FFFBE6']},
   Superbet:       {s:['#FCEBEB','#F7C1C1','#F09595','#E24B4A','#A32D2D'],t:['#A32D2D','#A32D2D','#501313','#FCEBEB','#FCEBEB']},
+  GUT:            {s:['#F5F5F5','#282828','#1A1A1A','#111111','#000000'],t:['#1A1A1A','#FFFFFF','#FFFFFF','#F5F5F5','#F5F5F5']},
 };
 const ST={
   pending:{l:'Não Iniciado',bg:'var(--st-pending-bg)',tc:'var(--st-pending-tc)',ic:'ti-clock'},
@@ -514,7 +517,7 @@ function memberActBtns(j,mid){
   if(ms==='paused')return`<button class="abtn resume" onclick="resumeM(${j.id},'${mid}',event)"><i class="ti ti-player-play" style="font-size:9px"></i> Retomar</button><button class="abtn deliver" onclick="deliverM(${j.id},'${mid}',event)" title="Entregar"><i class="ti ti-circle-check" style="font-size:9px"></i></button>`;
   return`<button class="abtn reopen" onclick="reopenM(${j.id},'${mid}',event)"><i class="ti ti-refresh" style="font-size:9px"></i> Reabrir</button>`;
 }
-function cc(cl){const r=CR[cl]||CR.Superbet;return{bg:r.s[1],tx:r.t[1]};}
+function cc(cl){const r=CR[cl]||CR.GUT;return{bg:r.s[1],tx:r.t[1]};}
 function urg(ds,st){
   const d=urgDays(ds,st);if(d===null)return null;
   if(d<0)return{l:`${Math.abs(d)}d atr.`,s:'background:var(--urg-crit-bg);color:var(--urg-crit-tc)'};
@@ -767,7 +770,7 @@ function rTimeline(){
   const badge=document.getElementById('tl-fbadge'),lbl=fl[filt]||'';
   badge.textContent=lbl;badge.style.display=lbl?'inline':'none';
   if(lbl)badge.style.cssText=`font-size:10px;padding:2px 8px;border-radius:20px;font-weight:600;display:inline;${filt==='paused'?'background:#E6F1FB;color:#0C447C':'background:#FAEEDA;color:#633806'}`;
-  document.getElementById('tlleg').innerHTML=`<span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="width:12px;height:8px;border-radius:2px;background:#FFD000;display:inline-block"></span>Mercado Livre</span><span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="width:12px;height:8px;border-radius:2px;background:#F09595;display:inline-block"></span>Superbet</span><span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="width:2px;height:12px;background:#534AB7;display:inline-block"></span><span style="background:#534AB7;color:#fff;font-size:7px;padding:0 3px;border-radius:2px">TP</span></span><span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="width:2px;height:12px;background:#E24B4A;display:inline-block"></span><span style="background:#E24B4A;color:#fff;font-size:7px;padding:0 3px;border-radius:2px">DL</span></span>`;
+  document.getElementById('tlleg').innerHTML=`<span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="width:12px;height:8px;border-radius:2px;background:#FFD000;display:inline-block"></span>Mercado Livre</span><span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="width:12px;height:8px;border-radius:2px;background:#F09595;display:inline-block"></span>Superbet</span><span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="width:12px;height:8px;border-radius:2px;background:#282828;display:inline-block"></span>GUT</span><span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="width:2px;height:12px;background:#534AB7;display:inline-block"></span><span style="background:#534AB7;color:#fff;font-size:7px;padding:0 3px;border-radius:2px">TP</span></span><span style="font-size:10px;color:var(--text3);display:flex;align-items:center;gap:3px"><span style="width:2px;height:12px;background:#E24B4A;display:inline-block"></span><span style="background:#E24B4A;color:#fff;font-size:7px;padding:0 3px;border-radius:2px">DL</span></span>`;
 }
 
 function rMetrics(){
