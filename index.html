@@ -674,7 +674,7 @@ function saveModal(){
   if(!title){toast('Informe o título do job.');return;}
   const mems=[...document.getElementById('f-members').selectedOptions].map(o=>o.value);
   const eid=document.getElementById('edit-id').value;
-  const prevJob=jid?jobs.find(x=>x.id===jid):null;
+  const prevJob=eid?jobs.find(x=>x.id===parseInt(eid)):null;
   const data={title,cl:document.getElementById('f-cl').value,cx:document.getElementById('f-cx').value,members:mems.length?mems:['bruno'],startDate:document.getElementById('f-startDate').value||null,date:document.getElementById('f-date').value||null,tp:document.getElementById('f-tp').value||null,dateBrasil:document.getElementById('f-dBrasil').value||null,note:document.getElementById('f-note').value.trim()||null,drive:document.getElementById('f-drive').value.trim()||null,memberRole:prevJob?{...prevJob.memberRole}:{}};
   data.members.forEach(mid=>{if(!data.memberRole[mid])data.memberRole[mid]='fazendo';});
   if(eid){const j=jobs.find(x=>x.id===parseInt(eid));if(j){const prev=j.members.slice();Object.assign(j,data);j.members.forEach(mid=>{if(!j.memberStatus[mid]){j.memberStatus[mid]='pending';j.memberSessions[mid]=[];}});prev.filter(mid=>!j.members.includes(mid)).forEach(mid=>{delete j.memberStatus[mid];delete j.memberSessions[mid];});}markDirty();toast('Job atualizado.');}
