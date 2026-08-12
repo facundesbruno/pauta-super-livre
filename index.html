@@ -33,15 +33,15 @@
   --st-done-bg:#EAF3DE;--st-done-tc:#3B6D11;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);font-size:17px;min-height:100vh}
-.app{max-width:1280px;margin:0 auto;padding:2rem 1.5rem 6rem}
+html,body{font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);font-size:18px;min-height:100vh}
+.app{max-width:1400px;margin:0 auto;padding:2.5rem 2rem 6rem}
 
 /* Topbar */
 .topbar{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.1rem;flex-wrap:wrap;gap:10px}
-.topbar h1{font-size:24px;font-weight:600;letter-spacing:-.3px}
-.today-lbl{font-size:12px;color:var(--text3);margin-top:3px}
+.topbar h1{font-size:26px;font-weight:600;letter-spacing:-.3px}
+.today-lbl{font-size:13px;color:var(--text3);margin-top:3px}
 .tacts{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
-.fb{font-size:13px;padding:6px 14px;border-radius:var(--radius);border:0.5px solid var(--border-strong);background:transparent;cursor:pointer;color:var(--text2)}
+.fb{font-size:14px;padding:7px 16px;border-radius:var(--radius);border:0.5px solid var(--border-strong);background:transparent;cursor:pointer;color:var(--text2)}
 .fb:hover{background:var(--surface1)}
 .fb.on{font-weight:600;color:#633806;background:#FAEEDA;border-color:#EF9F27}
 .fb.onp{font-weight:600;color:#0C447C;background:#E6F1FB;border-color:#185FA5}
@@ -71,7 +71,7 @@ html,body{font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;ba
 .numInputWrapper span.arrowDown:after{border-top-color:var(--text2)!important}
 
 /* Save bar */
-.save-bar{display:flex;align-items:center;gap:8px;padding:.65rem 1.2rem;border-radius:var(--radius);border:0.5px solid var(--border);background:var(--surface);font-size:13px;color:var(--text3);margin-bottom:1rem;transition:all .2s}
+.save-bar{display:flex;align-items:center;gap:8px;padding:.7rem 1.4rem;border-radius:var(--radius);border:0.5px solid var(--border);background:var(--surface);font-size:14px;color:var(--text3);margin-bottom:1rem;transition:all .2s}
 .save-bar.dirty{border-color:#EF9F27;background:#FAEEDA;color:#633806}
 .save-bar.clean{border-color:#1D9E75;background:#EAF3DE;color:#085041}
 .save-dot{width:8px;height:8px;border-radius:50%;background:currentColor;flex-shrink:0}
@@ -85,19 +85,19 @@ html,body{font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;ba
 .mc{background:var(--surface);border-radius:12px;padding:.85rem 1.1rem;cursor:pointer;border:0.5px solid transparent;transition:border-color .12s}
 .mc:hover{border-color:var(--border-strong)}
 .mc.sel{border-color:#EF9F27}
-.mc .lb{font-size:12px;color:var(--text3);margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-weight:500}
-.mc .vl{font-size:30px;font-weight:700;line-height:1.1}
+.mc .lb{font-size:13px;color:var(--text3);margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-weight:500}
+.mc .vl{font-size:34px;font-weight:700;line-height:1.1}
 
 /* Tabs */
 .tabs{display:flex;border-bottom:0.5px solid var(--border);margin-bottom:1rem;overflow-x:auto}
-.tab{font-size:14px;padding:9px 18px;cursor:pointer;color:var(--text2);border-bottom:2.5px solid transparent;background:none;border-top:none;border-left:none;border-right:none;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.tab{font-size:15px;padding:10px 20px;cursor:pointer;color:var(--text2);border-bottom:2.5px solid transparent;background:none;border-top:none;border-left:none;border-right:none;white-space:nowrap;display:flex;align-items:center;gap:4px}
 .tab:hover{color:var(--text)}
 .tab.active{color:var(--text);border-bottom-color:var(--accent);font-weight:600}
 .view{display:none}.view.active{display:block}
 
 /* Cards */
 .mrow{background:var(--surface);border:0.5px solid var(--border);border-radius:16px;margin-bottom:13px}
-.mhdr{display:flex;align-items:center;gap:10px;padding:.9rem 1.2rem;border-bottom:0.5px solid var(--border)}
+.mhdr{display:flex;align-items:center;gap:12px;padding:1rem 1.4rem;border-bottom:0.5px solid var(--border)}
 .av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
 .jlist{padding:.75rem 1.2rem;display:flex;flex-direction:column;gap:5px}
 .jcard{border-radius:var(--radius);cursor:pointer;overflow:hidden;border:0.5px solid var(--border);transition:box-shadow .12s,transform .1s}
@@ -121,9 +121,9 @@ html,body{font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;ba
 
 /* Timeline */
 .tlwrap{background:var(--surface);border:0.5px solid var(--border);border-radius:14px;padding:1rem;overflow-x:auto}
-.tlgrid{display:grid;grid-template-columns:80px 1fr;min-width:560px}
+.tlgrid{display:grid;grid-template-columns:90px 1fr;min-width:560px}
 .tlhead{grid-column:2;display:flex;margin-bottom:6px}
-.tlday{font-size:11px;color:var(--text3);text-align:center;flex:1;padding:4px 2px;border-radius:5px;line-height:1.5;font-weight:500}
+.tlday{font-size:12px;color:var(--text3);text-align:center;flex:1;padding:4px 2px;border-radius:5px;line-height:1.5;font-weight:500}
 .tlday.tod{background:#FAEEDA;color:#633806;font-weight:700}
 .tlday.wk{opacity:.22;background:var(--surface1)}
 .tllbl{display:flex;align-items:flex-start;justify-content:center;padding-top:8px;border-top:0.5px solid var(--border)}
@@ -230,7 +230,7 @@ html,body{font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;ba
 <div class="det-panel" id="det-panel">
   <div class="dhdr">
     <div style="flex:1">
-      <div style="font-size:15px;font-weight:600;line-height:1.35" id="dp-title">Ajuste Fichas Stella</div>
+      <div style="font-size:17px;font-weight:600;line-height:1.35" id="dp-title">Ajuste Fichas Stella</div>
       <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:5px" id="dp-meta"><span class="spill" style="background:#EAF3DE;color:#3B6D11"><i class="ti ti-circle-check" style="font-size:9px"></i> Entregue</span><span class="cltag" style="background:#D3D1C7;color:#444441">Awards</span><span class="fbkbadge">⏳ Deixar claro desde o começo que tínhamos menos investimento do que a concorrência na categoria.</span></div>
     </div>
     <button class="dclose" onclick="closeDet()"><i class="ti ti-x"></i></button>
@@ -469,9 +469,11 @@ function migrateJobs(){
     // ensure new members added via modal also get defaults
     if(!j.memberStatus)j.memberStatus={};
     if(!j.memberSessions)j.memberSessions={};
+    if(!j.memberRole)j.memberRole={};
     j.members.forEach(mid=>{
       if(!j.memberStatus[mid])j.memberStatus[mid]='pending';
       if(!j.memberSessions[mid])j.memberSessions[mid]=[];
+      if(!j.memberRole[mid])j.memberRole[mid]='fazendo';
     });
   });
 }
@@ -516,6 +518,7 @@ function memberActBtns(j,mid){
   if(ms==='paused')return`<button class="abtn resume" onclick="resumeM(${j.id},'${mid}',event)"><i class="ti ti-player-play" style="font-size:9px"></i> Retomar</button><button class="abtn deliver" onclick="deliverM(${j.id},'${mid}',event)" title="Entregar"><i class="ti ti-circle-check" style="font-size:9px"></i></button>`;
   return`<button class="abtn reopen" onclick="reopenM(${j.id},'${mid}',event)"><i class="ti ti-refresh" style="font-size:9px"></i> Reabrir</button>`;
 }
+function toggleMemberRole(jid,mid,e){if(e)e.stopPropagation();const j=jobs.find(x=>x.id===jid);if(!j)return;if(!j.memberRole)j.memberRole={};j.memberRole[mid]=j.memberRole[mid]==='acompanhando'?'fazendo':'acompanhando';markDirty();render();if(openJId===jid)openDet(jid);}
 function cc(cl){const r=CR[cl]||CR.GUT;return{bg:r.s[1],tx:r.t[1]};}
 function urg(ds,st){
   const d=urgDays(ds,st);if(d===null)return null;
@@ -671,7 +674,9 @@ function saveModal(){
   if(!title){toast('Informe o título do job.');return;}
   const mems=[...document.getElementById('f-members').selectedOptions].map(o=>o.value);
   const eid=document.getElementById('edit-id').value;
-  const data={title,cl:document.getElementById('f-cl').value,cx:document.getElementById('f-cx').value,members:mems.length?mems:['bruno'],startDate:document.getElementById('f-startDate').value||null,date:document.getElementById('f-date').value||null,tp:document.getElementById('f-tp').value||null,dateBrasil:document.getElementById('f-dBrasil').value||null,note:document.getElementById('f-note').value.trim()||null,drive:document.getElementById('f-drive').value.trim()||null};
+  const prevJob=jid?jobs.find(x=>x.id===jid):null;
+  const data={title,cl:document.getElementById('f-cl').value,cx:document.getElementById('f-cx').value,members:mems.length?mems:['bruno'],startDate:document.getElementById('f-startDate').value||null,date:document.getElementById('f-date').value||null,tp:document.getElementById('f-tp').value||null,dateBrasil:document.getElementById('f-dBrasil').value||null,note:document.getElementById('f-note').value.trim()||null,drive:document.getElementById('f-drive').value.trim()||null,memberRole:prevJob?{...prevJob.memberRole}:{}};
+  data.members.forEach(mid=>{if(!data.memberRole[mid])data.memberRole[mid]='fazendo';});
   if(eid){const j=jobs.find(x=>x.id===parseInt(eid));if(j){const prev=j.members.slice();Object.assign(j,data);j.members.forEach(mid=>{if(!j.memberStatus[mid]){j.memberStatus[mid]='pending';j.memberSessions[mid]=[];}});prev.filter(mid=>!j.members.includes(mid)).forEach(mid=>{delete j.memberStatus[mid];delete j.memberSessions[mid];});}markDirty();toast('Job atualizado.');}
   else{const ms={},mse={};data.members.forEach(mid=>{ms[mid]='pending';mse[mid]=[];_pendingNotifs.push({type:'tagged',memberId:mid,jobId:nextId,jobTitle:data.title,at:new Date().toISOString()});});jobs.push({id:nextId++,status:'pending',sessions:[],memberStatus:ms,memberSessions:mse,dAt:null,...data});markDirty();toast('Job adicionado.');}
   closeModal();render();autoStartJobs();
@@ -737,7 +742,7 @@ function rTimeline(){
   const wkCols=days.map((d,i)=>d.getDay()===0||d.getDay()===6?`<div class="tlwc" style="left:${(i/DAYS*100).toFixed(2)}%;width:${(1/DAYS*100).toFixed(2)}%"></div>`:'').join('');
   const todLine=`<div class="tltod" style="left:${todPct.toFixed(2)}%"></div>`;
   let rowsHtml='';
-  const LANE_H=42;
+  const LANE_H=62;
   const sorted=sortByUrgency([...tlJobs]);
   sorted.forEach(j=>{
     const{bars}=buildBars([j],pct,TL_START,TL_END);
@@ -746,10 +751,17 @@ function rTimeline(){
     const{bg,tx}=cc(j.cl);
     const isDone=j.status==='done',isPsd=j.status==='paused',isPnd=j.status==='pending';
     const bbg=isDone?'#B4B2A9':isPsd?'#6FA8DC':isPnd?'#D3D1C7':bg,btx=isDone||isPsd?'#fff':isPnd?'#5F5E5A':tx;
-    const top=5,h=LANE_H-6,op=isDone?.5:isPnd?.75:1;
-    const vs=(j.title.split('|').pop()||j.title).trim().slice(0,24);
+    const top=5,h=LANE_H-8,op=isDone?.5:isPnd?.75:1;
+    const vs=(j.title.split('|').pop()||j.title).trim().slice(0,28);
     const dot=j.status==='active'?' ●':j.status==='pending'?' ○':'';
-    let barHtml=`<div class="tlbar" style="left:${bar.lft.toFixed(2)}%;width:${bar.wid.toFixed(2)}%;top:${top}px;height:${h}px;background:linear-gradient(to right,${lightenHex(bbg)},${bbg});color:${btx};opacity:${op};z-index:2" onclick="openDet(${j.id})" title="${j.title}"><span style="overflow:hidden;text-overflow:ellipsis;flex:1;letter-spacing:-.1px">${vs}${dot}</span></div>`;
+    // role badges for each member
+    const roleHtml=j.members.map(mid=>{
+      const mm=MEMBERS.find(x=>x.id===mid);if(!mm)return'';
+      const role=(j.memberRole||{})[mid]||'fazendo';
+      const isFaz=role==='fazendo';
+      return`<span style="font-size:9px;padding:1px 5px;border-radius:10px;font-weight:700;white-space:nowrap;background:${isFaz?'rgba(255,255,255,0.28)':'rgba(0,0,0,0.18)'};">${mm.ini} ${isFaz?'F':'A'}</span>`;
+    }).join('');
+    let barHtml=`<div class="tlbar" style="left:${bar.lft.toFixed(2)}%;width:${bar.wid.toFixed(2)}%;top:${top}px;height:${h}px;background:linear-gradient(to right,${lightenHex(bbg)},${bbg});color:${btx};opacity:${op};z-index:2;flex-direction:column;align-items:flex-start;gap:2px;padding:5px 10px" onclick="openDet(${j.id})" title="${j.title}"><div style="display:flex;gap:3px;flex-wrap:nowrap;overflow:hidden">${roleHtml}</div><span style="overflow:hidden;text-overflow:ellipsis;width:100%;letter-spacing:-.1px;font-size:13px;font-weight:600">${vs}${dot}</span></div>`;
     if(bar.tpPct!==null&&bar.tpPct>=0&&bar.tpPct<=100)barHtml+=`<div class="tpmark" style="left:${bar.tpPct.toFixed(2)}%;top:${top}px;height:${h}px;background:#534AB7"></div><div class="tpflag" style="left:${bar.tpPct.toFixed(2)}%;top:${top-13}px">TP</div>`;
     if(bar.dlPct!==null&&bar.dlPct>=0&&bar.dlPct<=100){const df=top+(h/2)-8;barHtml+=`<div class="dlmark" style="left:${bar.dlPct.toFixed(2)}%;top:${top}px;height:${h}px;background:#E24B4A"></div><div class="dlflag" style="left:${bar.dlPct.toFixed(2)}%;top:${df}px">DL</div>`;}
     // avatars sobrepostos dos membros do job
@@ -813,8 +825,11 @@ function rMembers(){
           </div>
           <div style="display:flex;align-items:center;gap:6px;padding-left:16px" onclick="event.stopPropagation()">
             <span class="spill" style="background:${msM.bg};color:${msM.tc};font-size:9px"><i class="ti ${msM.ic}" style="font-size:8px"></i> ${msM.l}</span>
-            ${wkH>0?`<span style="font-size:10px;color:var(--text3)">${fH(wkH)} esta semana</span>`:''}
-            <div style="margin-left:auto;display:flex;gap:3px">${memberActBtns(j,m.id)}</div>
+            ${wkH>0?`<span style="font-size:11px;color:var(--text3)">${fH(wkH)} esta semana</span>`:''}
+            <div style="margin-left:auto;display:flex;gap:4px;align-items:center">
+              ${(()=>{const role=(j.memberRole||{})[m.id]||'fazendo';const isFaz=role==='fazendo';return`<button onclick="toggleMemberRole(${j.id},'${m.id}',event)" style="font-size:11px;padding:3px 10px;border-radius:20px;border:0.5px solid;cursor:pointer;font-weight:600;background:transparent;${isFaz?'border-color:#534AB7;color:#534AB7':'border-color:#EF9F27;color:#633806'}" title="Alternar papel">${isFaz?'✏ Fazendo':'👁 Acomp.'}</button>`;})()}
+              ${memberActBtns(j,m.id)}
+            </div>
           </div>
         </div>`;
       }).join('')}
